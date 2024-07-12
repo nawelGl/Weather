@@ -3,11 +3,11 @@ import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
 
-public class connexion {
+public class Connexion {
 
     protected Connection connection;
     
-    public connexion(){
+    public Connexion(){
         //1. Charger la classe du Driver
         Properties props = new Properties();
         try{
