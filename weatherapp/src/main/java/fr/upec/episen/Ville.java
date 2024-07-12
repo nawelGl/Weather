@@ -1,3 +1,5 @@
+package fr.upec.episen;
+
 public class Ville {
     //Atributs
     private String nomVille;
@@ -9,6 +11,10 @@ public class Ville {
         this.nomVille = nom;
         this.codeInsee = ci;
         this.codePostal = cp;
+    }
+    
+    public Ville(){
+
     }
 
     //Accesseurs
