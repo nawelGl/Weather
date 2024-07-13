@@ -18,8 +18,8 @@ public class Main {
         }
 
         //Test requete HTTP API :
-        Http httpRequest = new Http();
+        HttpRequestApi httpRequest = new HttpRequestApi();
         System.out.println("Voici le résultat de la requête HTTP :");
-        System.out.println(httpRequest.getDataFromAPI());
+        System.out.println(httpRequest.getDataFromAPI().toString());
     }
 }
