@@ -5,9 +5,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Ville {
     //Atributs
-    private String nomVille;
-    private int codePostal;
-    private int codeInsee;
+    private String name;
+    private int cp;
+    private int insee;
     private int altitude;
     private double longitude;
     private double latitude;
@@ -20,52 +20,52 @@ public class Ville {
     public Ville(String json) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         Ville temp = objectMapper.readValue(json, Ville.class);
-        this.codeInsee = temp.getCodeInsee();
-        this.codePostal = temp.getCodePostal();
-        this.nomVille =temp.getNomVille();
+        this.insee = temp.getInsee();
+        this.cp = temp.getCp();
+        this.name =temp.getName();
         this.altitude =temp.getAltitude();
         this.longitude = temp.getLongitude();
         this.altitude = temp.getAltitude();
     }
 
     public Ville(int codeInsee, int codePostal, String nomVille){
-        this.codeInsee = codeInsee;
-        this.nomVille = nomVille;
-        this.codePostal = codePostal;
+        this.insee = codeInsee;
+        this.name = nomVille;
+        this.cp = codePostal;
     }
 
     public Ville(int codeInsee, int codePostal, String nomVille, double latitude, double longitude, int altitude){
-        this.codeInsee = codeInsee;
-        this.codePostal = codePostal;
-        this.nomVille = nomVille;
+        this.insee = codeInsee;
+        this.cp = codePostal;
+        this.name = nomVille;
         this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
     }
 
     //Accesseurs
-    public int getCodeInsee() {
-        return codeInsee;
+    public int getInsee() {
+        return insee;
     }
 
-    public void setCodeInsee(int codeInsee) {
-        this.codeInsee = codeInsee;
+    public void setInsee(int codeInsee) {
+        this.insee = codeInsee;
     }
 
-    public String getNomVille() {
-        return nomVille;
+    public String getName() {
+        return name;
     }
 
-    public void setNomVille(String nomVille) {
-        this.nomVille = nomVille;
+    public void setName(String nomVille) {
+        this.name = nomVille;
     }
 
-    public int getCodePostal() {
-        return codePostal;
+    public int getCp() {
+        return cp;
     }
     
-    public void setCodePostal(int codePostal) {
-        this.codePostal = codePostal;
+    public void setCp(int codePostal) {
+        this.cp = codePostal;
     }
 
     public int getAltitude() {
@@ -95,8 +95,8 @@ public class Ville {
     //toString
     public String toString(){
         StringBuilder string = new StringBuilder();
-        string.append(nomVille);
-        string.append(" (" + codePostal + ") : ");
+        string.append(name);
+        string.append(" (" + cp + ") : ");
         string.append(" altitude : " + altitude + ",");
         string.append(" latitude : " + latitude + ",");
         string.append(" longitude : " + longitude);

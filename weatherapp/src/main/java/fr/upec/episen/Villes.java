@@ -7,11 +7,11 @@ public class Villes {
 
     }
 
-    public Ville getVille() {
+    public Ville getCity() {
         return city;
     }
 
-    public void setVille(Ville ville) {
-        this.city = ville;
+    public void setCity(Ville city) {
+        this.city = city;
     }
 }

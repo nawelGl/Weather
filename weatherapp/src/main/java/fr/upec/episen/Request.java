@@ -29,24 +29,25 @@ public class Request {
         }
     }
 
-    public int getCityInseeCode(String nomCommune){
+    public Ville getCityInseeCode(String nomCommune){
         String nomMaj = nomCommune.toUpperCase();
         Properties props = Feature.instance.getProps();
         String readReq= props.getProperty("city.read");
         Ville result = new Ville();
         try{
-            //PreparedStatement pstmt = connection.prepareStatement(readReq);
             PreparedStatement pstmt = connection.prepareStatement(readReq, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             pstmt.setString(1, nomMaj);
             ResultSet rs =  pstmt.executeQuery();
             if(rs.first()){
-                result.setCodeInsee(rs.getInt("code_insee"));
-                result.setNomVille(rs.getString("nom_commune"));
-                result.setCodePostal(rs.getInt("code_postal"));
+                result.setInsee(rs.getInt("code_insee"));
+                result.setName(rs.getString("nom_commune"));
+                result.setCp(rs.getInt("code_postal"));
+
+                Actions.setCodeInsee(result.getInsee());
             }
         } catch (SQLException sqle){
             System.out.println("Erreur lors de l'exécution de la requête : " + sqle.getMessage());
         }
-        return result.getCodeInsee();
+        return result;
     }
 }
