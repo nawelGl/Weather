@@ -29,9 +29,14 @@ public class Actions {
             System.out.println("Code INSEE de " + nomVille + " non trouvé.");
         }
 
-        //Test requete HTTP API :
+        //Test requete HTTP API Localisation :
         HttpRequestLocationCity httpRequest = new HttpRequestLocationCity();
         System.out.println("Voici le résultat de la requête HTTP :");
-        System.out.println(httpRequest.getDataFromAPI().toString());
+        System.out.println(httpRequest.getLocationFromAPI().toString());
+
+        //Test requete HTTP API ephemeride :
+        HttpRequestEphemeride httpRequestEphemeride = new HttpRequestEphemeride();
+        httpRequestEphemeride.getEphemerideFromAPI();
+        System.out.println(httpRequestEphemeride.getEphemerideFromAPI().toString());
     }
 }

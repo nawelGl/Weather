@@ -7,7 +7,7 @@ import java.net.http.HttpResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class HttpRequestLocationCity {
-    public Ville getDataFromAPI(){
+    public Ville getLocationFromAPI(){
         int codeInsee = Actions.getCodeInsee();
 
         HttpClient client = HttpClient.newHttpClient();
