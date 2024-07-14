@@ -36,7 +36,10 @@ public class Actions {
 
         //Test requete HTTP API ephemeride :
         HttpRequestEphemeride httpRequestEphemeride = new HttpRequestEphemeride();
-        httpRequestEphemeride.getEphemerideFromAPI();
         System.out.println(httpRequestEphemeride.getEphemerideFromAPI().toString());
+
+        //Test requete HTTP API forecast :
+        HttpRequestForecast httpRequestForecast = new HttpRequestForecast();
+        System.out.println(httpRequestForecast.getForecastFromAPI().toString());
     }
 }

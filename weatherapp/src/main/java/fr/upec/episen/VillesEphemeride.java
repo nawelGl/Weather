@@ -20,7 +20,7 @@ public class VillesEphemeride {
         this.ephemeride = ephemeride;
     }
 
-    //toString
+    @Override
     public String toString(){
         StringBuilder string = new StringBuilder();
         string.append("Ville : " + this.getCity().getName());
