@@ -1,23 +1,19 @@
 package fr.upec.episen;
 
-import java.util.List;
-
 public class Forecast {
-    private List<Item> items;
+
+    private Item[] item;
 
     public Forecast(){
 
     }
 
-    public Forecast(){
-
+    public Item[] getItem() {
+        return item;
     }
 
-    public List<Item> getItems() {
-        return items;
+    public void setItem(Item[] item) {
+        this.item = item;
     }
 
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
 }

@@ -3,7 +3,7 @@ package fr.upec.episen;
 public class ForecastResponse {
     private Ville city;
     private Update update;
-    private Forecast forecast;
+    private Item[] forecast = new Item[14];
 
     public ForecastResponse(){
 
@@ -25,11 +25,11 @@ public class ForecastResponse {
         this.update = update;
     }
 
-    public Forecast getForecast() {
+    public Item[] getForecast() {
         return forecast;
     }
 
-    public void setForecast(Forecast forecast) {
+    public void setForecast(Item[] forecast) {
         this.forecast = forecast;
     }
 
@@ -38,9 +38,9 @@ public class ForecastResponse {
         StringBuilder string = new StringBuilder();
         string.append("Ville : ").append(this.getCity().getName());
         string.append(" (").append(this.getCity().getCp()).append(")");
-        string.append("\nAujourd'hui, il fait ").append(this.getForecast().getItems().get(0).getTmin()).append(" degrés minimum et ").append(this.getForecast().getItems().get(0).getTmax()).append(" degrés maximum.");
-        string.append("\nDemain, il fera ").append(this.getForecast().getItems().get(1).getTmin()).append(" degrés minimum et ").append(this.getForecast().getItems().get(1).getTmax()).append(" degrés maximum.");
-        string.append("\nLa probabilité qu'il pleuve aujourd'hui est de ").append(this.getForecast().getItems().get(0).getProbarain()).append("%.");
+        string.append("\nAujourd'hui, il fait ").append(this.getForecast()[0].getTmin()).append(" degrés minimum et ").append(this.getForecast()[0].getTmax()).append(" degrés maximum.");
+        string.append("\nDemain, il fera ").append(this.getForecast()[1].getTmin()).append(" degrés minimum et ").append(this.getForecast()[1].getTmax()).append(" degrés maximum.");
+        string.append("\nLa probabilité qu'il pleuve aujourd'hui est de ").append(this.getForecast()[0].getProbarain()).append("%.");
         return string.toString();
     }
 }
