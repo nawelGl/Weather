@@ -1,6 +1,8 @@
 /Users/nawel/Documents/GitHub/Weather/weatherapp/src/main/java/fr/upec/episen/Forecast.java
+/Users/nawel/Documents/GitHub/Weather/weatherapp/src/main/java/fr/upec/episen/Front/Index.java
 /Users/nawel/Documents/GitHub/Weather/weatherapp/src/main/java/fr/upec/episen/Feature.java
 /Users/nawel/Documents/GitHub/Weather/weatherapp/src/main/java/fr/upec/episen/Ephemeride.java
+/Users/nawel/Documents/GitHub/Weather/weatherapp/src/main/java/fr/upec/episen/Front/Template.java
 /Users/nawel/Documents/GitHub/Weather/weatherapp/src/main/java/fr/upec/episen/HttpRequestForecast.java
 /Users/nawel/Documents/GitHub/Weather/weatherapp/src/main/java/fr/upec/episen/Actions.java
 /Users/nawel/Documents/GitHub/Weather/weatherapp/src/main/java/fr/upec/episen/HttpRequestLocationCity.java

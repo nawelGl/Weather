@@ -11,5 +11,6 @@ fr/upec/episen/Item.class
 fr/upec/episen/HttpRequestLocationCity.class
 fr/upec/episen/Request.class
 fr/upec/episen/Actions.class
+fr/upec/episen/Front/Index.class
 fr/upec/episen/Feature.class
 fr/upec/episen/Update.class

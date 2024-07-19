@@ -50,4 +50,21 @@ public class Request {
         }
         return result;
     }
+
+    public String getWeatherInfo(int code){
+        String result = "";
+        Properties props = Feature.instance.getProps();
+        String readReq= props.getProperty("weatherCode.read");
+        try{
+            PreparedStatement pstmt = connection.prepareStatement(readReq, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            pstmt.setInt(1, code);
+            ResultSet rs =  pstmt.executeQuery();
+            if(rs.first()){
+                result = (rs.getString("description"));
+            }
+        } catch (SQLException sqle){
+            System.out.println("Erreur lors de l'exécution de la requête : " + sqle.getMessage());
+        }
+        return result;
+    }
 }
