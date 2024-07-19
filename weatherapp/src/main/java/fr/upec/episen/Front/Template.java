@@ -3,11 +3,11 @@ package fr.upec.episen.Front;
 import java.awt.*;
 
 public class Template {
-    private static String couleurPincipale = "#F8EDE3";
-    private static String couleurSecondaire = "#C8B6A6";
+    private static String couleurPincipale = "#FFEFEF";
+    private static String couleurSecondaire = "#F3D0D7";
     private static int largeur = 850;
     private static int longueur = 600;
-    private static String villeParDefaut = "vitry sur seine";
+    private static String villeParDefaut = "le havre";
     private static Font mainFont = new Font("Avenir", Font.TYPE1_FONT, 28);
     private static Font moyenneFont = new Font("Avenir", Font.TYPE1_FONT, 22);
     private static Font temperatureFont = new Font("Arial", Font.BOLD, 30);
@@ -42,5 +42,9 @@ public class Template {
 
     public static Font getTemperatureFont() {
         return temperatureFont;
+    }
+
+    public static void setVilleParDefaut(String villeParDefaut) {
+        Template.villeParDefaut = villeParDefaut;
     }
 }

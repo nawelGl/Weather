@@ -7,6 +7,8 @@ import fr.upec.episen.Ville;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Objects;
 
 public class Index {
@@ -36,6 +38,17 @@ public class Index {
         logoLabel.setBounds(10, 8, 70, 70);
         mainPanel.add(logoLabel);
 
+        ImageIcon changeCity= new ImageIcon(Objects.requireNonNull(Index.class.getResource("/ville-verte.png")));
+        JButton changeCityButton=new JButton(changeCity);
+        changeCityButton.setBounds(790,550,24,24);
+        changeCityButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChangementVille changementVille = new ChangementVille();
+                mainFrame.dispose();
+            }
+        });
+
         JLabel titre = new JLabel();
         titre.setText("Bienvenue sur votre app météo !");
         titre.setFont(Template.getMoyenneFont());
@@ -51,7 +64,7 @@ public class Index {
         descriptionMeteo = request.getWeatherInfo(resultatRequeteForecast.getForecast()[0].getWeather());
 
         JPanel encadre = new JPanel();
-        encadre.setBounds(510,100,230,40);
+        encadre.setBounds(510,200,230,40);
         encadre.setBackground(Color.decode(Template.getCouleurSecondaire()));
         mainPanel.add(encadre);
 
@@ -64,7 +77,7 @@ public class Index {
         nomVille.setText(resultatRequeteForecast.getCity().getName());
         nomVille.setFont(Template.getMainFont());
         nomVille.setForeground(Color.white);
-        nomVille.setBounds(510,100,200,50);
+        //nomVille.setBounds(510,300,200,50);
         encadre.add(nomVille);
 
         JLabel temps = new JLabel();
@@ -91,7 +104,16 @@ public class Index {
         temperatureMax.setBounds(450,490,50,50);
         mainPanel.add(temperatureMax);
 
+        ImageIcon iconeTemps = new ImageIcon(Objects.requireNonNull(Index.class.getResource(DisplayImages.displayImage(descriptionMeteo))));
+        JLabel iconeTempsLabel = new JLabel(iconeTemps);
+        iconeTempsLabel.setBounds(150, 100, 250, 250);
+        mainPanel.add(iconeTempsLabel);
+
         mainFrame.getContentPane().add(mainPanel);
         mainFrame.setVisible(true);
+    }
+
+    public Ville getVille() {
+        return ville;
     }
 }
