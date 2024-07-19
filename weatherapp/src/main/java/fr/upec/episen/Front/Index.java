@@ -40,7 +40,7 @@ public class Index {
 
         ImageIcon changeCity= new ImageIcon(Objects.requireNonNull(Index.class.getResource("/ville-verte.png")));
         JButton changeCityButton=new JButton(changeCity);
-        changeCityButton.setBounds(790,550,24,24);
+        changeCityButton.setBounds(800,520,24,24);
         changeCityButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -48,6 +48,7 @@ public class Index {
                 mainFrame.dispose();
             }
         });
+        mainPanel.add(changeCityButton);
 
         JLabel titre = new JLabel();
         titre.setText("Bienvenue sur votre app météo !");
@@ -106,7 +107,7 @@ public class Index {
 
         ImageIcon iconeTemps = new ImageIcon(Objects.requireNonNull(Index.class.getResource(DisplayImages.displayImage(descriptionMeteo))));
         JLabel iconeTempsLabel = new JLabel(iconeTemps);
-        iconeTempsLabel.setBounds(150, 100, 250, 250);
+        iconeTempsLabel.setBounds(150, 90, 250, 250);
         mainPanel.add(iconeTempsLabel);
 
         mainFrame.getContentPane().add(mainPanel);

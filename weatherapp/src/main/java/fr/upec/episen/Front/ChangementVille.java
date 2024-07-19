@@ -42,15 +42,15 @@ public class ChangementVille {
         JLabel texteChangementVille = new JLabel();
         texteChangementVille.setText("Pour quelle ville vouez vous avoir les prévisions météo ?");
         texteChangementVille.setFont(Template.getMoyenneFont());
-        texteChangementVille.setBounds(110, 100, 350, 70);
+        texteChangementVille.setBounds(160, 220, 700, 70);
         mainPanel.add(texteChangementVille);
 
         JTextField newCityTextflied = new JTextField();
-        newCityTextflied.setBounds(300, 250, 350, 70);
+        newCityTextflied.setBounds(250, 300, 350, 35);
         mainPanel.add(newCityTextflied);
 
         JButton valider = new JButton("Valider !");
-        valider.setBounds(400, 350, 350, 70);
+        valider.setBounds(360, 370, 120, 30);
         valider.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -60,6 +60,7 @@ public class ChangementVille {
                 mainFrame.dispose();
             }
         });
+        mainPanel.add(valider);
 
         mainFrame.getContentPane().add(mainPanel);
         mainFrame.setVisible(true);
