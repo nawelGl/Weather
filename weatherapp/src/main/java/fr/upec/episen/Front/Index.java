@@ -7,6 +7,7 @@ import fr.upec.episen.Ville;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Objects;
 
 public class Index {
     private JFrame mainFrame;
@@ -29,6 +30,17 @@ public class Index {
 
         mainPanel.setLayout(null);
         mainPanel.setBackground(Color.decode(Template.getCouleurPincipale()));
+
+        ImageIcon logo = new ImageIcon(Objects.requireNonNull(Index.class.getResource("/application-meteo.png")));
+        JLabel logoLabel = new JLabel(logo);
+        logoLabel.setBounds(10, 8, 70, 70);
+        mainPanel.add(logoLabel);
+
+        JLabel titre = new JLabel();
+        titre.setText("Bienvenue sur votre app météo !");
+        titre.setFont(Template.getMoyenneFont());
+        titre.setBounds(90, 8, 350, 70);
+        mainPanel.add(titre);
 
         ville.setName(Template.getVilleParDefaut());
         ville = request.getCityInseeCode(ville.getName());
@@ -59,27 +71,23 @@ public class Index {
         temps.setText(descriptionMeteo);
         temps.setFont(Template.getMoyenneFont());
         temps.setForeground(Color.white);
-        //temps.setBounds(300,300,400,50);
         encadreWeather.add(temps);
 
         JLabel minMax = new JLabel();
         minMax.setText("Voici le minimum et le maximum de températures aujourd'hui :");
         minMax.setFont(Template.getMoyenneFont());
-        //temperatureMin.setForeground(Color.white);
         minMax.setBounds(120,430,700,50);
         mainPanel.add(minMax);
 
         JLabel temperatureMin = new JLabel();
         temperatureMin.setText(String.valueOf(resultatRequeteForecast.getForecast()[0].getTmin()));
         temperatureMin.setFont(Template.getTemperatureFont());
-        //temperatureMin.setForeground(Color.white);
         temperatureMin.setBounds(350,490,50,50);
         mainPanel.add(temperatureMin);
 
         JLabel temperatureMax = new JLabel();
         temperatureMax.setText(String.valueOf(resultatRequeteForecast.getForecast()[0].getTmax()));
         temperatureMax.setFont(Template.getTemperatureFont());
-        //temperatureMax.setForeground(Color.white);
         temperatureMax.setBounds(450,490,50,50);
         mainPanel.add(temperatureMax);
 
